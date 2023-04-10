@@ -17,3 +17,10 @@ class Document(db.Model):
         self.text = txt
         self.created_date = datetime.strptime(date, DATETIME_PATTERN)
      
+    def as_dict(self):
+        return {
+            "id": self.id,
+            "text": self.text,
+            "created_date": self.created_date.strftime(DATETIME_PATTERN),
+            "rubrics": self.rubrics,
+        }
