@@ -1,5 +1,5 @@
 from app import db, es
-from app.elastic import query_index_by_text, query_index_by_id
+from app.elastic import delete_by_id, query_index_by_text, query_index_by_id
 
 def search(Model, text):
     for doc in Model.query.all():
@@ -12,3 +12,6 @@ def search(Model, text):
         return {"result": [doc.as_dict() for doc in result]}
     except Exception:
         return Exception
+   
+def delete(Model, id):
+    delete_item = query_index_by_id('docs', id)
