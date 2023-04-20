@@ -5,4 +5,5 @@ import asyncio
 
 app = Flask(__name__)
 el_s = Elasticsearch('http://elastic:9200')
+print(app)
 
