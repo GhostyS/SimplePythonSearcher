@@ -5,7 +5,7 @@ from app.tasks import search, delete
 
 @app.get('/search/')
 def get_posts():
-    text = request.args["text"]
+    #text = request.args["text"]
     result = loop.run_until_complete(search(Docs, text))
     return result
 
