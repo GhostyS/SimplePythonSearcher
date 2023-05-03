@@ -15,10 +15,5 @@ def query_index_by_text(index, text):
         query = { 'multi_match': {'query': text, 'fields': ['*']}, "sort": [{"date_field": {"order": "desc"}}]})
     ids = [int(hit['_id']) for hit in search['hits']['hits']]
     return ids
-      
-    
-
-def get_doc_by_id(index, id):
-    return True
     
     
