@@ -15,5 +15,12 @@ def query_index_by_text(index, text):
         query = { 'multi_match': {'query': text, 'fields': ['*']}, "sort": [{"date_field": {"order": "desc"}}]})
     ids = [int(hit['_id']) for hit in search['hits']['hits']]
     return ids
-    
-    
+
+"""
+def query_index_by(index, text):
+    search = es.search(
+        index=index,
+        size=20,
+        query = { 'multi_match': {'query': text, 'fields': ['*']}, "sort": [{"date_field": {"order": "desc"}}]})
+    return True    
+"""
