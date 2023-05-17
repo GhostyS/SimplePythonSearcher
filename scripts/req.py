@@ -1,4 +1,4 @@
-from app import app, loop
+from app import app
 from flask import request
 from app.models import Docs
 from app.tasks import search, delete
@@ -19,5 +19,3 @@ def delete_post():
             db.session.commit()
             return str(db_result)
         return "Not found post with such id"
-    result = loop.run_until_complete(delete(Docs, id))
-    return 
