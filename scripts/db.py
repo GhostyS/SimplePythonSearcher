@@ -1,7 +1,7 @@
 from app import db
 from datetime import datetime
 
-#DATETIME_PATTERN = r"%d-%m-%Y %H:%M:%S"
+DATETIME_PATTERN = r"%d-%m-%Y %H:%M:%S"
 
 class Document(db.Model):
     __searchable__ = ['text']
