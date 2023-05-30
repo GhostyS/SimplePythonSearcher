@@ -1,5 +1,11 @@
-
+{
  "info": {
     "version": "1.0.0",
     "title": "SimplePythonSearcher",
  }
+ "servers": [
+    {
+      "url": "http://127.0.0.1:5000/"
+    }
+  ],
+}
