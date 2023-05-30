@@ -8,4 +8,30 @@
       "url": "http://127.0.0.1:5000/"
     }
   ],
+"paths": {
+    "/delete": {
+      "delete": {
+        "summary": "Delete post by id",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID of post",
+            "required": true,
+            "in": "text",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "True or error message"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
 }
