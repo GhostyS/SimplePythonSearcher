@@ -6,7 +6,7 @@ from elasticsearch import Elasticsearch
 import asyncio
 
 app = Flask(__name__)
-app.config.from_object(Config)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test.db"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 es = Elasticsearch('http://elastic:9200')
