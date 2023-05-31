@@ -25,5 +25,5 @@ async def delete(Model, id):
             db_result = bool(Model.query.filter(Model.id==id).delete())
             db.session.commit()
             return str(db_result)
-        return "Not found post with such id"
-    return "Not found post with such id"
+        return "Not found "
+    return "Not found "
