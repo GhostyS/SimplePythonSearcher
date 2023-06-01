@@ -50,5 +50,5 @@ __Программа максимум:__
 4. Запустить import_index.py
 5. Чтобы проверить загрузку индекса в консоли ввести: curl -X GET "localhost:9200/_cat/indices?v"
 6. Запустить server.py
-[- /search/?text=](http://10.0.6.84:5000/search/?text=%27%D0%B0%27)  
+7. "http://10.0.6.84:5000/search/?text='ааа'" - пример ввода для поиска
 - /delete/?id=
