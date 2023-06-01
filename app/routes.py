@@ -1,4 +1,4 @@
-from app import app, loop
+from app import app
 from flask import request
 from app.models import Docs
 from app.tasks import search, delete
