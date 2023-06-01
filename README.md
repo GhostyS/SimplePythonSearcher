@@ -48,6 +48,7 @@ __Программа максимум:__
 2. В файле elasticsearch.yml xpack.security.enabled: true заменить на false
 3. Запустить .\bin\elasticsearch.bat
 4. Запустить import_index.py
-5. Запустить server.py
+5. Чтобы проверить загрузку индекса в консоли ввести: curl -X GET "localhost:9200/_cat/indices?v"
+6. Запустить server.py
 - /search/?text=  
 - /delete/?id=
