@@ -44,7 +44,10 @@ __Программа максимум:__
 
 
 ## Запуск
-1. Скачать ElasticSearch
-2. Запустить .\bin\elasticsearch.bat
+1. Скачать архив с ElasticSearch. Распаковать
+2. В файле elasticsearch.yml xpack.security.enabled: true заменить на false
+3. Запустить .\bin\elasticsearch.bat
+4. Запустить import_index.py
+5. Запустить server.py
 - /search/?text=  
 - /delete/?id=
