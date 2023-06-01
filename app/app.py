@@ -16,4 +16,4 @@ if __name__ == "__main__":
     #doc = {'title': 'My Document', 'content': 'Some content'}
     #es.index(index='my_index', document=doc)
     app.run()
-import routes, models
+#import routes, models
