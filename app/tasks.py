@@ -1,7 +1,7 @@
 from app import db, es
 from app.elastic import delete_by_id, query_index_by_text, query_index_by_id, add_to_index
 
-async def search(Model, text):
+def search(Model, text):
     if not es.indices.exists(index='docs'):
         for post in Model.query.all():
             add_to_index('docs', post)
@@ -14,7 +14,7 @@ async def search(Model, text):
     except Exception as exc:
         return str(exc)
 
-async def delete(Model, id):
+def delete(Model, id):
     if not es.indices.exists(index='docs'):
         for post in Model.query.all():
             add_to_index('docs', post)
