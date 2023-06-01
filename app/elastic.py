@@ -3,21 +3,24 @@ from app import es
 
 def delete_by_id(index, id):
     try:
-        es.delete(index=index, id=id)
+        es.delete(index='docs', id=id)
         return True
     except elasticsearch.NotFoundError:
        return False
 
 def query_index_by_text(index, text):
     search = es.search(
-        index=index,
+        index='docs',
         size=20,
         query = {'multi_match': {'query': text, 'fields': ['*']}})
-    ids = [int(hit['_id']) for hit in search['hits']['hits']]
+    print(search['hits']['hits'])
+    ids = [hit['_source']['id'] for hit in search['hits']['hits']]
+    if(len(ids) > 20):
+        return ids[:20]
     return ids
 
 def query_index_by_id(index, id):
-    result = es.search(index=index, size=1, query={
+    result = es.search(index='docs', size=1, query={
             "match": {
                 'id': id
             }
