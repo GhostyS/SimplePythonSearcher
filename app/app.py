@@ -11,9 +11,5 @@ loop = asyncio.new_event_loop()
 
 
 if __name__ == "__main__":
-    #with app.app_context():
-    #    db.create_all()
-    #doc = {'title': 'My Document', 'content': 'Some content'}
-    #es.index(index='my_index', document=doc)
     app.run()
-#import routes, models
+
