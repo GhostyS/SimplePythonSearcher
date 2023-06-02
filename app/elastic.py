@@ -2,10 +2,15 @@ import elasticsearch
 from app import es
 
 def delete_by_id(index, id):
+    result = es.search(index='docs', size=1, query={
+            "match": {
+                'id': id
+            }
+        })["hits"]["hits"]
     try:
-        es.delete(index='docs', id=id)
+        es.delete(index='docs', id=result[0]["_id"])
         return True
-    except elasticsearch.NotFoundError:
+    except Exception:
        return False
 
 def query_index_by_text(index, text):
