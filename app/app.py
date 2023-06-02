@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from elasticsearch import Elasticsearch
 import asyncio
 
-
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///app.db"
 app.config['JSON_AS_ASCII'] = False
