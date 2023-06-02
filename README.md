@@ -49,6 +49,7 @@ __Программа максимум:__
 3. Запустить .\bin\elasticsearch.bat
 4. Запустить import_index.py
 5. Чтобы проверить загрузку индекса в консоли ввести: curl -X GET "localhost:9200/_cat/indices?v"
-6. Запустить server.py
+6. Запустить server.py из папки app
 7. "[http://10.0.6.84:5000/search/?text='ааа'](http://10.0.6.84:5000/search/?text=%27%D0%B0%27)" - пример ввода для поиска
-- /delete/?id=
+8. http://10.0.6.84:5000/delete/?id=69 - пример ввода для удаления
+
