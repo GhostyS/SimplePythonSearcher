@@ -1,4 +1,4 @@
-from app import app, loop
+from app import app, loop, db
 from flask import request
 from models import Docs
 from tasks import search, delete
@@ -9,9 +9,19 @@ def get_posts():
     result = loop.run_until_complete(search(Docs, text))
     return result
 
-@app.delete('/delete/')
+@app.get('/delete/')
 def delete_post():
     id = request.args["id"]
     result = loop.run_until_complete(delete(Docs, id))
     return result
+
+"""
+@app.route('/del/<int:id>', methods=['POST'])
+def delete_resource(id):
+    #resource = db.query.get_or_404(id)
+    
+    #db.session.delete(resource)
+    #db.session.commit()
+    
+    return jsonify({'message': 'Resource deleted'})"""
 
