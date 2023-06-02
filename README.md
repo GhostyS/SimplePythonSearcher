@@ -44,12 +44,13 @@ __Программа максимум:__
 
 
 ## Запуск
-1. Скачать архив с ElasticSearch. Распаковать
-2. В файле elasticsearch.yml xpack.security.enabled: true заменить на false
-3. Запустить .\bin\elasticsearch.bat
-4. Запустить import_index.py
-5. Чтобы проверить загрузку индекса в консоли ввести: curl -X GET "localhost:9200/_cat/indices?v"
-6. Запустить server.py из папки app
-7. "[http://10.0.6.84:5000/search/?text='ааа'](http://10.0.6.84:5000/search/?text=%27%D0%B0%27)" - пример ввода для поиска
-8. http://10.0.6.84:5000/delete/?id=69 - пример ввода для удаления
+1. Запустить VPN
+2. Скачать архив с ElasticSearch. Распаковать
+3. В файле elasticsearch.yml xpack.security.enabled: true заменить на false
+4. Запустить .\bin\elasticsearch.bat
+5. Запустить import_index.py
+6. Чтобы проверить загрузку индекса в консоли ввести: curl -X GET "localhost:9200/_cat/indices?v"
+7. Запустить server.py из папки app
+8. "[http://10.0.6.84:5000/search/?text='ааа'](http://10.0.6.84:5000/search/?text=%27%D0%B0%27)" - пример ввода для поиска
+9. http://10.0.6.84:5000/delete/?id=69 - пример ввода для удаления
 
