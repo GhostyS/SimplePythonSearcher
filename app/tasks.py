@@ -24,6 +24,14 @@ async def search(Model, text):
         return str(exc)"""
 
 async def delete(Model, id):
+    delete_item = query_index_by_id('docs', id)
+    if delete_item is not None:
+        elastic_result = delete_by_id('docs', id)
+        if elastic_result is True:
+            db.session.commit()
+            return "Deleted"
+    return "Not Found"
+    """
     if not es.indices.exists(index='docs'):
         for post in Model.query.all():
             add_to_index('docs', post)
@@ -36,3 +44,4 @@ async def delete(Model, id):
             return str(db_result)
         return "Not found post with such id"
     return "Not found post with such id"
+    э"""
